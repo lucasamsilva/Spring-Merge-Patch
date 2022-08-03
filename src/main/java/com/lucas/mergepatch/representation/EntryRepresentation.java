@@ -1,11 +1,10 @@
 package com.lucas.mergepatch.representation;
 
-import lombok.Builder;
 import lombok.Data;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Optional;
 
 @Data
 public class EntryRepresentation {
@@ -14,10 +13,10 @@ public class EntryRepresentation {
     private String key;
 
     @Valid
-    private JsonNullable<AccountRepresentation> account;
+    private Optional<@NotNull AccountRepresentation> account;
 
     @Valid
-    private JsonNullable<OwnerRepresentation> owner;
+    private Optional<@NotNull OwnerRepresentation> owner;
 
     @NotNull
     private String reason;

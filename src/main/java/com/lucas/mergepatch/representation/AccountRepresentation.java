@@ -1,26 +1,19 @@
 package com.lucas.mergepatch.representation;
 
-import com.lucas.mergepatch.annotations.ContentNotBlank;
-import lombok.Builder;
 import lombok.Data;
-import org.openapitools.jackson.nullable.JsonNullable;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import java.util.Optional;
 
 
 @Data
 public class AccountRepresentation {
 
-    @ContentNotBlank
-    private JsonNullable<String> participant;
-    @ContentNotBlank
-    private JsonNullable<String> accountNumber;
-    @ContentNotBlank
-    private JsonNullable<String> accountType;
-    @ContentNotBlank
-    private JsonNullable<String> branch;
-    @ContentNotBlank
-    private JsonNullable<String> openingDate;
+    private Optional<@NotBlank String> participant;
+    private Optional<@NotBlank String> accountNumber;
+    private Optional<@NotBlank String> accountType;
+    private Optional<@NotBlank String> branch;
+    private Optional<@NotBlank String> openingDate;
 
 
 }
